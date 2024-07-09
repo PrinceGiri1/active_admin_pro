@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BlogingApp</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body data-controller="push" data-application-server-key= <%= Rails.application.credentials.dig(:webpush, :public_key) %> >
+    <% if user_signed_in? %> 
+     <div> Welcome <%= current_user.email %> </div> 
+      <%= button_to "Sign out", destroy_user_session_path, method: :delete %> 
+    <% else %>
+      <%= button_to "Sign in", new_user_session_path %> 
+    <% end %>
+    <p class="notice"><%= notice %></p> 
+    <p class="alert"><%= alert %></p> 
+    <%= yield %>
+    <%= javascript_include_tag 'notifications' %>
+  </body>
+</html>

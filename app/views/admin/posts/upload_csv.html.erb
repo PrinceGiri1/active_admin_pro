@@ -1,0 +1,10 @@
+<h3>Upload CSV</h3>
+
+<%= form_tag import_csv_admin_posts_path, multipart: true, method: :post do %>
+  <div class="form-group">
+    <%= file_field_tag :file, accept: 'text/csv' %>
+  </div>
+  <div class="form-group">
+    <%= submit_tag 'Import CSV', class: 'btn btn-primary' %>
+  </div>
+<% end %>

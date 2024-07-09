@@ -1,0 +1,18 @@
+.custom-error {
+  border: 2px solid red;
+}
+
+.custom-success {
+  border: 2px solid green;
+}
+
+.custom-form-label {
+  font-weight: bold;
+  color: #333;
+}
+
+.custom-form-input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}

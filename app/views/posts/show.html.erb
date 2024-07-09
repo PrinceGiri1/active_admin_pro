@@ -1,0 +1,40 @@
+<p>
+  <strong>Title:</strong>
+  <%= @post.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @post.description %>
+</p>
+
+<p>
+  <strong>Read Count:</strong>
+  <%= @post.read_count %>
+</p>
+
+<p>
+  <strong>Approved by Admin:</strong>
+  <%= @post.approved_by_admin %>
+</p>
+
+<h2>Comments:</h2>
+<% @post.comments.each do |comment| %>
+  <div>
+    <strong><%= comment.user.email %>:</strong>
+    <%= comment.body %>
+  </div>
+<% end %>
+
+<%= form_with(model: [@post, Comment.new]) do |form| %>
+  <div class="field">
+    <%= form.label :body %><br>
+    <%= form.text_area :body %>
+  </div>
+  <div class="actions">
+    <%= form.submit 'Add Comment' %>
+  </div>
+<% end %>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
