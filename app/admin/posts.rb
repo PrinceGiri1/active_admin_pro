@@ -6,14 +6,11 @@ ActiveAdmin.register Post do
 
   filter :title, label: 'Something else'
   filter :title_or_description_cont, as: :string, label: "Name"
-
   filter :description
   filter :read_count
   filter :approved_by_admin, as: :check_boxes
 
-  
   # as: :check_boxes
-
   # scope :unpublished
   # scope "Subcategories", :unpublished
   # scope("Approve") { |scope| scope.where(approved_by_admin: true) }
