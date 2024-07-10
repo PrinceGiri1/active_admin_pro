@@ -14,3 +14,4 @@ class PushNotificationService
     )
   end
 end
+# PushNotificationService.new(subscription, message).send_notification

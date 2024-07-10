@@ -19,9 +19,9 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.new(post_params)
-
     if @post.save
       send_new_post_notification(@post)
+      send_sms_notification(@post)
       redirect_to '/', notice: 'Post was successfully created.'
     else
       render :new
@@ -56,5 +56,9 @@ class PostsController < ApplicationController
         message = "New Post Created: #{post.title}"
         PushNotificationService.new(subscription, message).send_notification
       end
+    end
+
+    def send_sms_notification(post)
+      TwilioService.new.send_sms(to: '917991577204', body: "New Post Created: #{post.title}")
     end
 end

@@ -50,6 +50,7 @@ gem 'pry', '~> 0.14.1'
 # gem 'fcm'
 gem 'web-push'
 gem "city-state"
+gem 'twilio-ruby', '~> 7.2.3'
 
 
 
