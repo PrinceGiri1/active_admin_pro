@@ -9,6 +9,7 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%#= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_importmap_tags %>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   </head>
 
   <body data-controller="push" data-application-server-key= <%= Rails.application.credentials.dig(:webpush, :public_key) %> >

@@ -11,5 +11,4 @@ class LocationsController < ApplicationController
     cities = CS.cities(state_code, country_code)
     render json: cities
   end
-
 end
