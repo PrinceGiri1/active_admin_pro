@@ -15,4 +15,7 @@ Rails.application.routes.draw do
   get 'locations/states', to: 'locations#states'
   get 'locations/cities', to: 'locations#cities'
 
+  resources :payments, only: [:new, :create, :show]
+  post 'payments/callback', to: 'payments#callback'
+
 end

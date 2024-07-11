@@ -30,3 +30,8 @@
 <%if current_user.present?%>
 	<%= link_to 'New Post', new_post_path %>
 <%end%>
+<br>
+<%if current_user.present?%>
+  <h3>If you like my work please support us:</h3>
+  <%= link_to 'Make some Donation', new_payment_path %>
+<%end%>
